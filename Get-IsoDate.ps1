@@ -13,7 +13,7 @@ This code is licensed under MIT license (see LICENSE.txt for details)
 .OUTPUTS
 	ISO 8601 datetime, either as stdout, filename-compatible (without colons), or out to the console
 .NOTES
-	Version:        1.3.1
+	Version:        1.3.2
 	Author:         Joel Eckert
 	Creation Date:  2021-01-04
 	Purpose/Change: Consistent datetime tagging for logs and filenames 
@@ -38,7 +38,7 @@ Function Get-IsoDate {
 	)
 	# Gets the current timezone and UTC offset
 	$TimeZone = (Get-TimeZone | Select-Object -ExpandProperty BaseUtcOffset).ToString()
-	$TimeZoneFormatted = $TimeZone.Substring(0, $TimeZone.Length - 3) + "Z"
+	$TimeZoneFormatted = $TimeZone.Substring(0, $TimeZone.Length - 3)
 		
 	# Outputs the date in an ISO 8601-compliant fashion, with trailing zeros for the time zone (if not Newfoundland)
 	$DateTime = (Get-Date -Format yyyy-MM-ddTHH:MM:ss.fff) + $TimeZoneFormatted
