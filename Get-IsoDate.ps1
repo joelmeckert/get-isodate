@@ -72,7 +72,7 @@ Function Get-IsoDate {
 		Write-Host $Second -ForegroundColor White -NoNewLine
 		Write-Host "." -ForegroundColor Blue -NoNewLine
 		Write-Host $Nanosecond -ForegroundColor DarkGray -NoNewLine
-		Write-Host $TZ -ForegroundColor DarkGray -NoNewLine
+		Write-Host ($TZ + " ") -ForegroundColor DarkGray -NoNewLine
 
 	}
 	Else {
